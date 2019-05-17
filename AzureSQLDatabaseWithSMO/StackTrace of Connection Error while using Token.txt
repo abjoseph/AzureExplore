@@ -1,0 +1,227 @@
+Login failed for user 'NT AUTHORITY\ANONYMOUS LOGON'.
+Printing Error Details: 
+
+PSMessageDetails      : 
+Exception             : System.Management.Automation.ExtendedTypeSystemException: The following exception occurred while trying to enumerate the collection: "Failed to connect to server 
+                        <Azure-SQL-Datbase>.database.windows.net.". ---> Microsoft.SqlServer.Management.Common.ConnectionFailureException: Failed to connect to server 
+                        <Azure-SQL-Datbase>.database.windows.net. ---> System.Data.SqlClient.SqlException: Login failed for user 'NT AUTHORITY\ANONYMOUS LOGON'.
+                           at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object 
+                        providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, 
+                        DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+                           at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool 
+                        pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+                           at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey 
+                        poolKey, DbConnectionOptions userOptions)
+                           at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+                           at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+                           at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean 
+                        onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+                           at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, 
+                        DbConnectionInternal& connection)
+                           at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, 
+                        DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+                           at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 
+                        retry, DbConnectionOptions userOptions)
+                           at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+                           at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+                           at System.Data.SqlClient.SqlConnection.Open()
+                           at Microsoft.SqlServer.Management.Common.ConnectionManager.InternalConnect(WindowsIdentity impersonatedIdentity)
+                           at Microsoft.SqlServer.Management.Common.ConnectionManager.Connect()
+                           --- End of inner exception stack trace ---
+                           at Microsoft.SqlServer.Management.Common.ConnectionManager.Connect()
+                           at Microsoft.SqlServer.Management.Common.ConnectionManager.PoolConnect()
+                           at Microsoft.SqlServer.Management.Common.ConnectionManager.GetServerInformation()
+                           at Microsoft.SqlServer.Management.Smo.ExecutionManager.GetServerVersion()
+                           at Microsoft.SqlServer.Management.Smo.SqlSmoObject.GetDbComparer(Boolean inServer)
+                           at Microsoft.SqlServer.Management.Smo.SqlSmoObject.InitializeStringComparer()
+                           at Microsoft.SqlServer.Management.Smo.SqlSmoObject.get_StringComparer()
+                           at Microsoft.SqlServer.Management.Smo.SimpleObjectCollectionBase.InitInnerCollection()
+                           at Microsoft.SqlServer.Management.Smo.SmoCollectionBase.InitializeChildCollection(Boolean refresh, ScriptingPreferences sp, String filterQuery, IEnumerable`1 extraFields)
+                           at Microsoft.SqlServer.Management.Smo.SmoCollectionBase.GetEnumerator(ScriptingPreferences sp)
+                           at System.Management.Automation.EnumerableOps.GetEnumerator(IEnumerable enumerable)
+                           --- End of inner exception stack trace ---
+                           at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)
+                           at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)
+                           at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)
+                           at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)
+TargetObject          : 
+CategoryInfo          : NotSpecified: (:) [], ExtendedTypeSystemException
+FullyQualifiedErrorId : ExceptionInGetEnumerator
+ErrorDetails          : 
+InvocationInfo        : System.Management.Automation.InvocationInfo
+ScriptStackTrace      : at Get-Databases<Process>, <No file>: line 90
+                        at <ScriptBlock>, <No file>: line 106
+PipelineIterationInfo : {}
+
+
+
+ 
+
+MyCommand             : 
+BoundParameters       : {}
+UnboundArguments      : {}
+ScriptLineNumber      : 90
+OffsetInLine          : 13
+HistoryId             : -1
+ScriptName            : 
+Line                  :             $Server.Databases.Where({$_.Name -in $DBNames})
+                        
+PositionMessage       : At line:90 char:13
+                        +             $Server.Databases.Where({$_.Name -in $DBNames})
+                        +             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PSScriptRoot          : 
+PSCommandPath         : 
+InvocationName        : 
+PipelineLength        : 0
+PipelinePosition      : 0
+ExpectingInput        : False
+CommandOrigin         : Internal
+DisplayScriptPosition : 
+
+
+
+ 00000000000000000000000000000000000000000000000000000000000000000000000000000000 
+
+ErrorRecord                 : The following exception occurred while trying to enumerate the collection: "Failed to connect to server <Azure-SQL-Datbase>.database.windows.net.".
+WasThrownFromThrowStatement : True
+Message                     : The following exception occurred while trying to enumerate the collection: "Failed to connect to server <Azure-SQL-Datbase>.database.windows.net.".
+Data                        : {System.Management.Automation.Interpreter.InterpretedFrameInfo}
+InnerException              : Microsoft.SqlServer.Management.Common.ConnectionFailureException: Failed to connect to server <Azure-SQL-Datbase>.database.windows.net. ---> 
+                              System.Data.SqlClient.SqlException: Login failed for user 'NT AUTHORITY\ANONYMOUS LOGON'.
+                                 at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object 
+                              providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData 
+                              reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+                                 at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, 
+                              DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+                                 at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, 
+                              DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+                                 at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+                                 at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+                                 at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean 
+                              onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+                                 at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, 
+                              DbConnectionInternal& connection)
+                                 at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, 
+                              DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+                                 at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 
+                              retry, DbConnectionOptions userOptions)
+                                 at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+                                 at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+                                 at System.Data.SqlClient.SqlConnection.Open()
+                                 at Microsoft.SqlServer.Management.Common.ConnectionManager.InternalConnect(WindowsIdentity impersonatedIdentity)
+                                 at Microsoft.SqlServer.Management.Common.ConnectionManager.Connect()
+                                 --- End of inner exception stack trace ---
+                                 at Microsoft.SqlServer.Management.Common.ConnectionManager.Connect()
+                                 at Microsoft.SqlServer.Management.Common.ConnectionManager.PoolConnect()
+                                 at Microsoft.SqlServer.Management.Common.ConnectionManager.GetServerInformation()
+                                 at Microsoft.SqlServer.Management.Smo.ExecutionManager.GetServerVersion()
+                                 at Microsoft.SqlServer.Management.Smo.SqlSmoObject.GetDbComparer(Boolean inServer)
+                                 at Microsoft.SqlServer.Management.Smo.SqlSmoObject.InitializeStringComparer()
+                                 at Microsoft.SqlServer.Management.Smo.SqlSmoObject.get_StringComparer()
+                                 at Microsoft.SqlServer.Management.Smo.SimpleObjectCollectionBase.InitInnerCollection()
+                                 at Microsoft.SqlServer.Management.Smo.SmoCollectionBase.InitializeChildCollection(Boolean refresh, ScriptingPreferences sp, String filterQuery, IEnumerable`1 
+                              extraFields)
+                                 at Microsoft.SqlServer.Management.Smo.SmoCollectionBase.GetEnumerator(ScriptingPreferences sp)
+                                 at System.Management.Automation.EnumerableOps.GetEnumerator(IEnumerable enumerable)
+TargetSite                  : Void CheckActionPreference(System.Management.Automation.Language.FunctionContext, System.Exception)
+StackTrace                  :    at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)
+                                 at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)
+                                 at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)
+                                 at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)
+HelpLink                    : 
+Source                      : System.Management.Automation
+HResult                     : -2146233087
+
+
+
+ 11111111111111111111111111111111111111111111111111111111111111111111111111111111 
+
+Message        : Failed to connect to server <Azure-SQL-Datbase>.database.windows.net.
+Data           : {}
+InnerException : System.Data.SqlClient.SqlException (0x80131904): Login failed for user 'NT AUTHORITY\ANONYMOUS LOGON'.
+                    at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, 
+                 String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool 
+                 pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+                    at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, 
+                 DbConnection owningConnection, DbConnectionOptions userOptions)
+                    at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, 
+                 DbConnectionOptions userOptions)
+                    at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+                    at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+                    at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, 
+                 DbConnectionOptions userOptions, DbConnectionInternal& connection)
+                    at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& 
+                 connection)
+                    at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal 
+                 oldConnection, DbConnectionInternal& connection)
+                    at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, 
+                 DbConnectionOptions userOptions)
+                    at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+                    at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+                    at System.Data.SqlClient.SqlConnection.Open()
+                    at Microsoft.SqlServer.Management.Common.ConnectionManager.InternalConnect(WindowsIdentity impersonatedIdentity)
+                    at Microsoft.SqlServer.Management.Common.ConnectionManager.Connect()
+                 ClientConnectionId:3862d3c9-eb57-476c-8a17-bfbdec409a2f
+                 Error Number:18456,State:1,Class:14
+                 ClientConnectionId before routing:7a206b69-d97d-4fbf-b8fc-18063e24a7f3
+                 Routing Destination:c1ff9fae2f71.HS1.tr2010.eastus2-a.worker.database.windows.net,11022
+TargetSite     : Void Connect()
+StackTrace     :    at Microsoft.SqlServer.Management.Common.ConnectionManager.Connect()
+                    at Microsoft.SqlServer.Management.Common.ConnectionManager.PoolConnect()
+                    at Microsoft.SqlServer.Management.Common.ConnectionManager.GetServerInformation()
+                    at Microsoft.SqlServer.Management.Smo.ExecutionManager.GetServerVersion()
+                    at Microsoft.SqlServer.Management.Smo.SqlSmoObject.GetDbComparer(Boolean inServer)
+                    at Microsoft.SqlServer.Management.Smo.SqlSmoObject.InitializeStringComparer()
+                    at Microsoft.SqlServer.Management.Smo.SqlSmoObject.get_StringComparer()
+                    at Microsoft.SqlServer.Management.Smo.SimpleObjectCollectionBase.InitInnerCollection()
+                    at Microsoft.SqlServer.Management.Smo.SmoCollectionBase.InitializeChildCollection(Boolean refresh, ScriptingPreferences sp, String filterQuery, IEnumerable`1 extraFields)
+                    at Microsoft.SqlServer.Management.Smo.SmoCollectionBase.GetEnumerator(ScriptingPreferences sp)
+                    at System.Management.Automation.EnumerableOps.GetEnumerator(IEnumerable enumerable)
+HelpLink       : 
+Source         : Microsoft.SqlServer.ConnectionInfo
+HResult        : -2146233087
+
+
+
+ 22222222222222222222222222222222222222222222222222222222222222222222222222222222 
+
+Errors             : {System.Data.SqlClient.SqlError: Login failed for user 'NT AUTHORITY\ANONYMOUS LOGON'.}
+ClientConnectionId : 3862d3c9-eb57-476c-8a17-bfbdec409a2f
+Class              : 14
+LineNumber         : 65536
+Number             : 18456
+Procedure          : 
+Server             : c1ff9fae2f71.HS1.tr2010.eastus2-a.worker.database.windows.net,11022
+State              : 1
+Source             : .Net SqlClient Data Provider
+ErrorCode          : -2146232060
+Message            : Login failed for user 'NT AUTHORITY\ANONYMOUS LOGON'.
+Data               : {HelpLink.ProdName, HelpLink.EvtSrc, HelpLink.EvtID, HelpLink.BaseHelpUrl...}
+InnerException     : 
+TargetSite         : Void .ctor(System.Data.ProviderBase.DbConnectionPoolIdentity, System.Data.SqlClient.SqlConnectionString, System.Data.SqlClient.SqlCredential, System.Object, System.String, 
+                     System.Security.SecureString, Boolean, System.Data.SqlClient.SqlConnectionString, System.Data.SqlClient.SessionData, System.Data.ProviderBase.DbConnectionPool, System.String, 
+                     Boolean, System.Data.SqlClient.SqlAuthenticationProviderManager)
+StackTrace         :    at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object 
+                     providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, 
+                     DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+                        at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, 
+                     DbConnection owningConnection, DbConnectionOptions userOptions)
+                        at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey 
+                     poolKey, DbConnectionOptions userOptions)
+                        at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+                        at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+                        at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean 
+                     onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+                        at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& 
+                     connection)
+                        at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, 
+                     DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+                        at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, 
+                     DbConnectionOptions userOptions)
+                        at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+                        at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+                        at System.Data.SqlClient.SqlConnection.Open()
+                        at Microsoft.SqlServer.Management.Common.ConnectionManager.InternalConnect(WindowsIdentity impersonatedIdentity)
+                        at Microsoft.SqlServer.Management.Common.ConnectionManager.Connect()
+HelpLink           : 
+HResult            : -2146232060
